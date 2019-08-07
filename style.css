@@ -23,7 +23,7 @@ a {
 
 .top-bar {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     min-height: 100px;
     grid-row-start: 2;
     grid-column-start: 2;
@@ -93,9 +93,7 @@ a {
 
 .top-contact {
     display: grid;
-    grid-column-start: 3;
     justify-self: end;
-    align-content: center;
     justify-items: center;
 }
 
@@ -111,13 +109,14 @@ a {
     grid-column-end: 3;
     grid-row-start: 4;
     color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .hero > h1 {
     font-family: "Roboto Condensed","Roboto",Arial,sans-serif;
     font-size: 3.5em;
     font-weight: 800;
-    color: rgb(120, 196, 247);
+    color: white;
 
 }
 
@@ -147,6 +146,7 @@ a {
     grid-gap: 1rem;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .services > ul > li > figure {
@@ -187,6 +187,32 @@ a {
     border-radius: .5rem;
 }
 
+.software {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.software > h1 {
+    font-size: 1.8em;
+    text-align: center;
+    color: #666666;
+}
+
+.software > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    list-style: none;
+}
+
+.software > ul > li > img {
+    height: 75px;
+}
+
+
 .about {
     background-color:#333;
     color: white;
@@ -196,8 +222,9 @@ a {
     /* justify-items: center; */
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 6;
+    grid-row-start: 7;
     padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .about-left > h1 {
@@ -210,6 +237,7 @@ a {
 
 .about-right {
     overflow: hidden;
+    justify-self: center;
     padding: 0;
 }
 
@@ -220,7 +248,7 @@ a {
     /* justify-items: center; */
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 7;
+    grid-row-start: 8;
     padding: 2rem;
 }
 
@@ -247,13 +275,15 @@ a {
 
 footer {
     display: grid;
-    grid-template-columns: 33% 33% 34%;
+    grid-template-columns: auto;
     background-color: #333;
     padding: .75rem;
-    color: white;
+    color: rgb(156, 156, 156);
     font-size: 1rem;
     justify-items: center;
     align-items: center;
+    text-align: center;
+    font-weight: 200;
 }
 
 footer a {
@@ -267,14 +297,16 @@ footer a {
 }
 
 @media (max-width: 480px) {
-    .logotype > h1 {
-        font-size: 1.5em;
-    }
 
     .top-bar {
         grid-auto-flow: row;
     }
-
+    .top-logo {
+        justify-self: center;
+    }
+    .top-contact {
+        justify-self: center;
+    }
     .top-contact > h2 {
         font-size: 1.0em;
     }
