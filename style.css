@@ -203,9 +203,11 @@ a {
 
 .software > ul {
     display: grid;
+    grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-items: center;
     list-style: none;
+    padding: 0;
 }
 
 .software > ul > li > img {
@@ -218,7 +220,7 @@ a {
     color: white;
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
     /* justify-items: center; */
     grid-column-start: 2;
     grid-column-end: 3;
@@ -229,17 +231,24 @@ a {
 
 .about-left > h1 {
     font-size: 2.4em;
+    margin-top: 0;
 }
 
-.about > p {
-    font-size: 1.0em;
+.about-left > p {
+    font-size: 0.9em;
 }
 
 .about-right {
     overflow: hidden;
     justify-self: center;
     padding: 0;
+    text-align: center;
 }
+
+.about-right > img {
+
+}
+
 
 .contact {  
     display: grid;
@@ -261,7 +270,7 @@ a {
 }
 .contact-info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .small {
@@ -297,6 +306,9 @@ footer a {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 10px;
+    }
 
     .top-bar {
         grid-auto-flow: row;
@@ -323,6 +335,10 @@ footer a {
 
     footer {
         font-size: 0.8em;
+    }
+
+    .about {
+        padding: 0;
     }
 
 }
