@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: #000;
+            display: grid;
+            height: 98vh;
+        }
+
+        #timestamp {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 800;
+            color: #FFF;
+            font-size: 28pt;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timestamp</title>
+</head>
+<body>
+    <div id="timestamp"></div>
+</body>
+<script>
+
+const MONTHS = [
+    'JAN',
+    'FEB',
+    'MAR',
+    'APR',
+    'MAY',
+    'JUN',
+    'JUL',
+    'AUG',
+    'SEP',
+    'OCT',
+    'NOV',
+    'DEC'
+];
+
+function pad(n, width, z) {
+  z = z || '0';
+  n = n + '';
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+
+var loop = setInterval(
+    function() {
+        var date = new Date();
+        var seconds = date.getSeconds();
+        var minutes = date.getMinutes();
+        var hour = date.getHours();
+        console.log(hour);
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+        var amPM = (hour >= 12) ? 'PM' : 'AM';
+        hour = (hour == 0 || hour == 12) ? 12 : hour % 12;
+
+        var dateString = `${MONTHS[monthIndex]} ${pad(day, 2)}, ${year} `;
+        var timeString = `${pad(hour, 2)}:${pad(minutes,2)}:${pad(seconds, 2)} ${amPM}`
+        
+        document.getElementById('timestamp').innerText = dateString + timeString;
+
+    },
+    1000
+);
+
+</script>
+</html>
